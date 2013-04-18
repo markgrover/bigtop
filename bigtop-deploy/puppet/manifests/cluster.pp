@@ -135,13 +135,6 @@ class hadoop_worker_node inherits hadoop_cluster_node {
         auth => $hadoop_security_authentication,
   }
 
-  hadoop-hbase::server { "hbase region server":
-        rootdir => $hadoop_hbase_rootdir,
-        heap_size => $hbase_heap_size,
-        zookeeper_quorum => $hadoop_hbase_zookeeper_quorum,
-        kerberos_realm => $kerberos_realm, 
-  }
-
   hadoop::mapred-app { "mapred-app":
         namenode_host => $hadoop_namenode_host,
         namenode_port => $hadoop_namenode_port,
@@ -151,12 +144,6 @@ class hadoop_worker_node inherits hadoop_cluster_node {
         dirs => $mapred_data_dirs,
   }
 
-  solr::server { "solrcloud server":
-       collections => $solrcloud_collections,
-       port        => $solrcloud_port,
-       port_admin  => $solrcloud_port_admin,
-       zk          => $solrcloud_zk,
-  }
 }
 
 class hadoop_head_node inherits hadoop_worker_node {
@@ -207,36 +194,6 @@ class hadoop_head_node inherits hadoop_worker_node {
         auth => $hadoop_security_authentication,
   }
 
-  hadoop::httpfs { "httpfs":
-        namenode_host => $hadoop_namenode_host,
-        namenode_port => $hadoop_namenode_port,
-        auth => $hadoop_security_authentication,
-  }
-
-  hadoop-hbase::master { "hbase master":
-        rootdir => $hadoop_hbase_rootdir,
-        heap_size => $hbase_heap_size,
-        zookeeper_quorum => $hadoop_hbase_zookeeper_quorum,
-        kerberos_realm => $kerberos_realm, 
-  }
-
-  hadoop-oozie::server { "oozie server":
-        kerberos_realm => $kerberos_realm, 
-  }
-
-  hue::server { "hue server":
-        rm_url      => $hadoop_rm_url,
-        rm_proxy_url => $hadoop_rm_proxy_url,
-        history_server_url => $hadoop_history_server_url,
-        webhdfs_url => $hadoop_httpfs_url,
-        rm_host     => $hadoop_rm_host,
-        rm_port     => $hadoop_rm_port,
-        oozie_url   => $hadoop_oozie_url,
-        default_fs  => $hadoop_namenode_uri,
-        kerberos_realm => $kerberos_realm,
-  }
-  Hadoop::Httpfs<||> -> Hue::Server<||>
-
   hadoop-zookeeper::server { "zookeeper":
         myid => "0",
         ensemble => $hadoop_zookeeper_ensemble,
@@ -249,12 +206,9 @@ class hadoop_head_node inherits hadoop_worker_node {
         require => Package['hadoop-hdfs']
   }
 
-  Exec<| title == "init hdfs" |> -> Hadoop-hbase::Master<||>
   Exec<| title == "init hdfs" |> -> Hadoop::Resourcemanager<||>
   Exec<| title == "init hdfs" |> -> Hadoop::Historyserver<||>
-  Exec<| title == "init hdfs" |> -> Hadoop::Httpfs<||>
   Exec<| title == "init hdfs" |> -> Hadoop::Rsync_hdfs<||>
-  Exec<| title == "init hdfs" |> -> Hadoop-oozie::Server<||>
 }
 
 class standby_head_node inherits hadoop_cluster_node {
@@ -277,23 +231,8 @@ class hadoop_gateway_node inherits hadoop_cluster_node {
     jobtracker_port => $hadoop_jobtracker_port,
     # auth => $hadoop_security_authentication,
   }
-  mahout::client { "mahout client":
-  }
-  giraph::client { "giraph client":
-     zookeeper_quorum => $giraph_zookeeper_quorum,
-  }
-  crunch::client { "crunch client":
-  }
-  hadoop-pig::client { "pig client":
-  }
   hadoop-hive::client { "hive client":
      hbase_zookeeper_quorum => $hadoop_hbase_zookeeper_quorum,
-  }
-  hadoop-sqoop::client { "sqoop client":
-  }
-  hadoop-oozie::client { "oozie client":
-  }
-  hadoop-hbase::client { "hbase client":
   }
   hadoop-zookeeper::client { "zookeeper client":
   }
