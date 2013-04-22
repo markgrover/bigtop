@@ -9,6 +9,8 @@ STORED AS
 
 FROM src
 INSERT OVERWRITE TABLE columnTable SELECT src.key, src.value LIMIT 10
+2013-04-19 14:19:40,538 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-19-37_920_780523229293231906/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:19:40,613 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-19-37_920_780523229293231906/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/columntable
 
 describe columnTable
@@ -17,6 +19,8 @@ value	string
 
 
 SELECT columnTable.* FROM columnTable ORDER BY columnTable.key
+2013-04-19 14:19:48,930 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-19-46_980_729811955454987346/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:19:48,994 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-19-46_980_729811955454987346/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 165	val_165
 238	val_238
 255	val_255

@@ -6,17 +6,19 @@ CREATE TABLE T3(key STRING, val STRING) STORED AS TEXTFILE
 
 
 LOAD DATA LOCAL INPATH 'seed_data_files/T1.txt' INTO TABLE T1
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/T1.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/T1.txt
 
 LOAD DATA LOCAL INPATH 'seed_data_files/T2.txt' INTO TABLE T2
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/T2.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/T2.txt
 
 LOAD DATA LOCAL INPATH 'seed_data_files/T3.txt' INTO TABLE T3
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/T3.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/T3.txt
 
 
 FROM UNIQUEJOIN PRESERVE T1 a (a.key), PRESERVE T2 b (b.key), PRESERVE T3 c (c.key)
 SELECT a.key, b.key, c.key
+2013-04-19 14:20:22,449 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-19_675_7856945826583842780/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:20:22,486 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-19_675_7856945826583842780/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 1	NULL	NULL
 2	2	2
 3	3	NULL
@@ -32,11 +34,15 @@ NULL	NULL	6
 
 FROM UNIQUEJOIN T1 a (a.key), T2 b (b.key), T3 c (c.key)
 SELECT a.key, b.key, c.key
+2013-04-19 14:20:32,304 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-30_159_5701876916688815815/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:20:32,367 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-30_159_5701876916688815815/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 2	2	2
 
 
 FROM UNIQUEJOIN T1 a (a.key), T2 b (b.key-1), T3 c (c.key)
 SELECT a.key, b.key, c.key
+2013-04-19 14:20:38,587 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-36_445_7224444364375983096/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:20:38,632 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-36_445_7224444364375983096/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 2	3	2
 7	8	7
 7	8	7
@@ -44,6 +50,8 @@ SELECT a.key, b.key, c.key
 
 FROM UNIQUEJOIN PRESERVE T1 a (a.key, a.val), PRESERVE T2 b (b.key, b.val), PRESERVE T3 c (c.key, c.val)
 SELECT a.key, a.val, b.key, b.val, c.key, c.val
+2013-04-19 14:20:45,671 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-43_445_496021820372096543/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:20:45,717 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-43_445_496021820372096543/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 1	11	NULL	NULL	NULL	NULL
 2	12	NULL	NULL	2	12
 NULL	NULL	2	22	NULL	NULL
@@ -59,6 +67,8 @@ NULL	NULL	NULL	NULL	6	16
 
 FROM UNIQUEJOIN PRESERVE T1 a (a.key), T2 b (b.key), PRESERVE T3 c (c.key)
 SELECT a.key, b.key, c.key
+2013-04-19 14:20:52,236 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-50_315_6147303468628045205/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:20:52,282 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-50_315_6147303468628045205/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 1	NULL	NULL
 2	2	2
 3	3	NULL
@@ -73,6 +83,8 @@ NULL	NULL	6
 
 FROM UNIQUEJOIN PRESERVE T1 a (a.key), T2 b(b.key)
 SELECT a.key, b.key
+2013-04-19 14:20:58,738 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-56_619_2736714773835182928/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:20:58,793 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-20-56_619_2736714773835182928/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 1	NULL
 2	2
 3	3

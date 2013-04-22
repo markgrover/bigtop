@@ -1,52 +1,52 @@
 CREATE TABLE srcbucket_mapjoin(key int, value string) CLUSTERED BY (key) INTO 2 BUCKETS STORED AS TEXTFILE
 
 load data local inpath 'seed_data_files/srcbucket20.txt' INTO TABLE srcbucket_mapjoin
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
 
 load data local inpath 'seed_data_files/srcbucket21.txt' INTO TABLE srcbucket_mapjoin
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
 
 
 CREATE TABLE srcbucket_mapjoin_part (key int, value string) partitioned by (ds string) CLUSTERED BY (key) INTO 4 BUCKETS STORED AS TEXTFILE
 
 load data local inpath 'seed_data_files/srcbucket20.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-08')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
 
 load data local inpath 'seed_data_files/srcbucket21.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-08')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
 
 load data local inpath 'seed_data_files/srcbucket22.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-08')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
 
 load data local inpath 'seed_data_files/srcbucket23.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-08')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
 
 load data local inpath 'seed_data_files/srcbucket20.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-09')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
 
 load data local inpath 'seed_data_files/srcbucket21.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-09')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
 
 load data local inpath 'seed_data_files/srcbucket22.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-09')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
 
 load data local inpath 'seed_data_files/srcbucket23.txt' INTO TABLE srcbucket_mapjoin_part partition(ds='2008-04-09')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
 
 
 CREATE TABLE srcbucket_mapjoin_part_2 (key int, value string) partitioned by (ds string) CLUSTERED BY (key) INTO 2 BUCKETS STORED AS TEXTFILE
 
 load data local inpath 'seed_data_files/srcbucket22.txt' INTO TABLE srcbucket_mapjoin_part_2 partition(ds='2008-04-08')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
 
 load data local inpath 'seed_data_files/srcbucket23.txt' INTO TABLE srcbucket_mapjoin_part_2 partition(ds='2008-04-08')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
 
 load data local inpath 'seed_data_files/srcbucket22.txt' INTO TABLE srcbucket_mapjoin_part_2 partition(ds='2008-04-09')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
 
 load data local inpath 'seed_data_files/srcbucket23.txt' INTO TABLE srcbucket_mapjoin_part_2 partition(ds='2008-04-09')
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
 
 
 create table bucketmapjoin_hash_result_1 (key bigint , value1 bigint, value2 bigint)
@@ -101,16 +101,16 @@ STAGE PLANS:
           Alias Bucket Base File Name Mapping:
             a {ds=2008-04-08/srcbucket20.txt=[srcbucket20.txt], ds=2008-04-08/srcbucket21.txt=[srcbucket21.txt], ds=2008-04-08/srcbucket22.txt=[srcbucket20.txt], ds=2008-04-08/srcbucket23.txt=[srcbucket21.txt], ds=2008-04-09/srcbucket20.txt=[srcbucket20.txt], ds=2008-04-09/srcbucket21.txt=[srcbucket21.txt], ds=2008-04-09/srcbucket22.txt=[srcbucket20.txt], ds=2008-04-09/srcbucket23.txt=[srcbucket21.txt]}
           Alias Bucket File Name Mapping:
-            a {hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket20.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket21.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket22.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket23.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket20.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket21.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket22.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket23.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt]}
+            a {file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket20.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket21.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket22.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket23.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket20.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket21.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket22.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket23.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt]}
           Alias Bucket Output File Name Mapping:
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket20.txt 0
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket21.txt 1
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket22.txt 2
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket23.txt 3
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket20.txt 0
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket21.txt 1
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket22.txt 2
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket23.txt 3
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket20.txt 0
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket21.txt 1
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket22.txt 2
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08/srcbucket23.txt 3
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket20.txt 0
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket21.txt 1
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket22.txt 2
+            file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09/srcbucket23.txt 3
 
   Stage: Stage-1
     Map Reduce
@@ -152,9 +152,9 @@ STAGE PLANS:
                   File Output Operator
                     compressed: false
                     GlobalTableId: 1
-                    directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002
+                    directory: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002
                     NumFilesPerFileSink: 1
-                    Stats Publishing Key Prefix: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10000/
+                    Stats Publishing Key Prefix: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10000/
                     table:
                         input format: org.apache.hadoop.mapred.TextInputFormat
                         output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
@@ -164,12 +164,12 @@ STAGE PLANS:
                           columns.types string:string:string
                           file.inputformat org.apache.hadoop.mapred.TextInputFormat
                           file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                          location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                          location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                           name default.bucketmapjoin_tmp_result
                           serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                           serialization.format 1
                           serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                          transient_lastDdlTime 1366231966
+                          transient_lastDdlTime 1366406067
                         serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                         name: default.bucketmapjoin_tmp_result
                     TotalFiles: 1
@@ -179,10 +179,10 @@ STAGE PLANS:
         Map Reduce Local Work
       Needs Tagging: false
       Path -> Alias:
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08 [b]
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09 [b]
+        file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08 [b]
+        file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09 [b]
       Path -> Partition:
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08 
+        file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08 
           Partition
             base file name: ds=2008-04-08
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -196,7 +196,7 @@ STAGE PLANS:
               columns.types int:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08
+              location file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-08
               name default.srcbucket_mapjoin_part
               numFiles 4
               numPartitions 2
@@ -207,7 +207,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               totalSize 5812
-              transient_lastDdlTime 1366231963
+              transient_lastDdlTime 1366406062
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -219,7 +219,7 @@ STAGE PLANS:
                 columns.types int:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part
+                location file:/user/hive/warehouse/srcbucket_mapjoin_part
                 name default.srcbucket_mapjoin_part
                 numFiles 8
                 numPartitions 2
@@ -230,11 +230,11 @@ STAGE PLANS:
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 totalSize 11624
-                transient_lastDdlTime 1366231964
+                transient_lastDdlTime 1366406065
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.srcbucket_mapjoin_part
             name: default.srcbucket_mapjoin_part
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09 
+        file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09 
           Partition
             base file name: ds=2008-04-09
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -248,7 +248,7 @@ STAGE PLANS:
               columns.types int:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09
+              location file:/user/hive/warehouse/srcbucket_mapjoin_part/ds=2008-04-09
               name default.srcbucket_mapjoin_part
               numFiles 4
               numPartitions 2
@@ -259,7 +259,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               totalSize 5812
-              transient_lastDdlTime 1366231964
+              transient_lastDdlTime 1366406065
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -271,7 +271,7 @@ STAGE PLANS:
                 columns.types int:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part
+                location file:/user/hive/warehouse/srcbucket_mapjoin_part
                 name default.srcbucket_mapjoin_part
                 numFiles 8
                 numPartitions 2
@@ -282,7 +282,7 @@ STAGE PLANS:
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 totalSize 11624
-                transient_lastDdlTime 1366231964
+                transient_lastDdlTime 1366406065
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.srcbucket_mapjoin_part
             name: default.srcbucket_mapjoin_part
@@ -297,14 +297,14 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          source: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10000
+          source: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10000
 
   Stage: Stage-0
     Move Operator
       tables:
           replace: true
-          source: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10000
+          source: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10000
           table:
               input format: org.apache.hadoop.mapred.TextInputFormat
               output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
@@ -314,28 +314,28 @@ STAGE PLANS:
                 columns.types string:string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                 name default.bucketmapjoin_tmp_result
                 serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                transient_lastDdlTime 1366231966
+                transient_lastDdlTime 1366406067
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.bucketmapjoin_tmp_result
-          tmp directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10001
+          tmp directory: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10001
 
   Stage: Stage-2
     Stats-Aggr Operator
-      Stats Aggregation Key Prefix: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10000/
+      Stats Aggregation Key Prefix: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10000/
 
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
-              directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10000
+              directory: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10000
               NumFilesPerFileSink: 1
               table:
                   input format: org.apache.hadoop.mapred.TextInputFormat
@@ -346,12 +346,12 @@ STAGE PLANS:
                     columns.types string:string:string
                     file.inputformat org.apache.hadoop.mapred.TextInputFormat
                     file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                    location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                    location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                     name default.bucketmapjoin_tmp_result
                     serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                    transient_lastDdlTime 1366231966
+                    transient_lastDdlTime 1366406067
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                   name: default.bucketmapjoin_tmp_result
               TotalFiles: 1
@@ -359,9 +359,9 @@ STAGE PLANS:
               MultiFileSpray: false
       Needs Tagging: false
       Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002]
       Path -> Partition:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 
           Partition
             base file name: -ext-10002
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -372,12 +372,12 @@ STAGE PLANS:
               columns.types string:string:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+              location file:/user/hive/warehouse/bucketmapjoin_tmp_result
               name default.bucketmapjoin_tmp_result
               serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              transient_lastDdlTime 1366231966
+              transient_lastDdlTime 1366406067
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -388,26 +388,26 @@ STAGE PLANS:
                 columns.types string:string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                 name default.bucketmapjoin_tmp_result
                 serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                transient_lastDdlTime 1366231966
+                transient_lastDdlTime 1366406067
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.bucketmapjoin_tmp_result
             name: default.bucketmapjoin_tmp_result
       Truncated Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002]
 
   Stage: Stage-5
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
-              directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10000
+              directory: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10000
               NumFilesPerFileSink: 1
               table:
                   input format: org.apache.hadoop.mapred.TextInputFormat
@@ -418,12 +418,12 @@ STAGE PLANS:
                     columns.types string:string:string
                     file.inputformat org.apache.hadoop.mapred.TextInputFormat
                     file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                    location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                    location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                     name default.bucketmapjoin_tmp_result
                     serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                    transient_lastDdlTime 1366231966
+                    transient_lastDdlTime 1366406067
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                   name: default.bucketmapjoin_tmp_result
               TotalFiles: 1
@@ -431,9 +431,9 @@ STAGE PLANS:
               MultiFileSpray: false
       Needs Tagging: false
       Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002]
       Path -> Partition:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 
           Partition
             base file name: -ext-10002
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -444,12 +444,12 @@ STAGE PLANS:
               columns.types string:string:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+              location file:/user/hive/warehouse/bucketmapjoin_tmp_result
               name default.bucketmapjoin_tmp_result
               serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              transient_lastDdlTime 1366231966
+              transient_lastDdlTime 1366406067
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -460,24 +460,24 @@ STAGE PLANS:
                 columns.types string:string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                 name default.bucketmapjoin_tmp_result
                 serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                transient_lastDdlTime 1366231966
+                transient_lastDdlTime 1366406067
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.bucketmapjoin_tmp_result
             name: default.bucketmapjoin_tmp_result
       Truncated Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002]
 
   Stage: Stage-6
     Move Operator
       files:
           hdfs directory: true
-          source: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10002
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-52-46_244_6384882560848629748/-ext-10000
+          source: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10002
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-14-27_525_4077520377196417468/-ext-10000
 
 
 
@@ -486,14 +486,22 @@ insert overwrite table bucketmapjoin_tmp_result
 select /*+mapjoin(a)*/ a.key, a.value, b.value 
 from srcbucket_mapjoin a join srcbucket_mapjoin_part b 
 on a.key=b.key
+2013-04-19 14:14:30,516 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-28_147_3323099996025925430/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:14:30,557 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-28_147_3323099996025925430/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:14:35,901 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-28_147_3323099996025925430/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:14:35,988 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-28_147_3323099996025925430/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_tmp_result
 
 
 select count(1) from bucketmapjoin_tmp_result
+2013-04-19 14:14:45,879 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-14-43_815_789419074420846669/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:14:45,917 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-14-43_815_789419074420846669/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 928
 
 insert overwrite table bucketmapjoin_hash_result_1
 select sum(hash(key)), sum(hash(value1)), sum(hash(value2)) from bucketmapjoin_tmp_result
+2013-04-19 14:14:51,894 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-49_866_2797827590206382062/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:14:51,943 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-49_866_2797827590206382062/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_hash_result_1
 set hive.optimize.bucketmapjoin = false
 
@@ -501,20 +509,30 @@ insert overwrite table bucketmapjoin_tmp_result
 select /*+mapjoin(a)*/ a.key, a.value, b.value 
 from srcbucket_mapjoin a join srcbucket_mapjoin_part b 
 on a.key=b.key
+2013-04-19 14:15:01,729 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-59_394_284179011532585957/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:01,786 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-59_394_284179011532585957/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:15:07,124 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-59_394_284179011532585957/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:07,221 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-14-59_394_284179011532585957/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_tmp_result
 
 
 select count(1) from bucketmapjoin_tmp_result
+2013-04-19 14:15:17,017 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-15-15_250_3320306218010810687/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:17,061 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-15-15_250_3320306218010810687/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 928
 
 insert overwrite table bucketmapjoin_hash_result_2
 select sum(hash(key)), sum(hash(value1)), sum(hash(value2)) from bucketmapjoin_tmp_result
+2013-04-19 14:15:23,134 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-21_109_3889012348945033029/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:23,171 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-21_109_3889012348945033029/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_hash_result_2
 
 
 select a.key-b.key, a.value1-b.value1, a.value2-b.value2
 from bucketmapjoin_hash_result_1 a left outer join bucketmapjoin_hash_result_2 b
 on a.key = b.key
+2013-04-19 14:15:32,348 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-15-30_257_6035593248638606457/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:32,395 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-15-30_257_6035593248638606457/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	0	0
 set hive.optimize.bucketmapjoin = true
 
@@ -562,12 +580,12 @@ STAGE PLANS:
           Alias Bucket Base File Name Mapping:
             a {ds=2008-04-08/srcbucket22.txt=[srcbucket20.txt], ds=2008-04-08/srcbucket23.txt=[srcbucket21.txt], ds=2008-04-09/srcbucket22.txt=[srcbucket20.txt], ds=2008-04-09/srcbucket23.txt=[srcbucket21.txt]}
           Alias Bucket File Name Mapping:
-            a {hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket22.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket23.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket22.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket23.txt=[hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt]}
+            a {file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket22.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket23.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket22.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket20.txt], file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket23.txt=[file:/user/hive/warehouse/srcbucket_mapjoin/srcbucket21.txt]}
           Alias Bucket Output File Name Mapping:
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket22.txt 0
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket23.txt 1
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket22.txt 0
-            hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket23.txt 1
+            file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket22.txt 0
+            file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08/srcbucket23.txt 1
+            file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket22.txt 0
+            file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09/srcbucket23.txt 1
 
   Stage: Stage-1
     Map Reduce
@@ -609,9 +627,9 @@ STAGE PLANS:
                   File Output Operator
                     compressed: false
                     GlobalTableId: 1
-                    directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002
+                    directory: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002
                     NumFilesPerFileSink: 1
-                    Stats Publishing Key Prefix: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10000/
+                    Stats Publishing Key Prefix: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10000/
                     table:
                         input format: org.apache.hadoop.mapred.TextInputFormat
                         output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
@@ -621,12 +639,17 @@ STAGE PLANS:
                           columns.types string:string:string
                           file.inputformat org.apache.hadoop.mapred.TextInputFormat
                           file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                          location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                          location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                           name default.bucketmapjoin_tmp_result
+                          numFiles 1
+                          numPartitions 0
+                          numRows 928
+                          rawDataSize 17038
                           serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                           serialization.format 1
                           serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                          transient_lastDdlTime 1366232039
+                          totalSize 17966
+                          transient_lastDdlTime 1366406115
                         serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                         name: default.bucketmapjoin_tmp_result
                     TotalFiles: 1
@@ -636,10 +659,10 @@ STAGE PLANS:
         Map Reduce Local Work
       Needs Tagging: false
       Path -> Alias:
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08 [b]
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09 [b]
+        file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08 [b]
+        file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09 [b]
       Path -> Partition:
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08 
+        file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08 
           Partition
             base file name: ds=2008-04-08
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -653,7 +676,7 @@ STAGE PLANS:
               columns.types int:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08
+              location file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-08
               name default.srcbucket_mapjoin_part_2
               numFiles 2
               numPartitions 2
@@ -664,7 +687,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               totalSize 3062
-              transient_lastDdlTime 1366231965
+              transient_lastDdlTime 1366406066
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -676,7 +699,7 @@ STAGE PLANS:
                 columns.types int:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2
+                location file:/user/hive/warehouse/srcbucket_mapjoin_part_2
                 name default.srcbucket_mapjoin_part_2
                 numFiles 4
                 numPartitions 2
@@ -687,11 +710,11 @@ STAGE PLANS:
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 totalSize 6124
-                transient_lastDdlTime 1366231966
+                transient_lastDdlTime 1366406067
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.srcbucket_mapjoin_part_2
             name: default.srcbucket_mapjoin_part_2
-        hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09 
+        file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09 
           Partition
             base file name: ds=2008-04-09
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -705,7 +728,7 @@ STAGE PLANS:
               columns.types int:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09
+              location file:/user/hive/warehouse/srcbucket_mapjoin_part_2/ds=2008-04-09
               name default.srcbucket_mapjoin_part_2
               numFiles 2
               numPartitions 2
@@ -716,7 +739,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               totalSize 3062
-              transient_lastDdlTime 1366231966
+              transient_lastDdlTime 1366406067
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -728,7 +751,7 @@ STAGE PLANS:
                 columns.types int:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/srcbucket_mapjoin_part_2
+                location file:/user/hive/warehouse/srcbucket_mapjoin_part_2
                 name default.srcbucket_mapjoin_part_2
                 numFiles 4
                 numPartitions 2
@@ -739,7 +762,7 @@ STAGE PLANS:
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 totalSize 6124
-                transient_lastDdlTime 1366231966
+                transient_lastDdlTime 1366406067
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.srcbucket_mapjoin_part_2
             name: default.srcbucket_mapjoin_part_2
@@ -754,14 +777,14 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          source: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10000
+          source: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10000
 
   Stage: Stage-0
     Move Operator
       tables:
           replace: true
-          source: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10000
+          source: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10000
           table:
               input format: org.apache.hadoop.mapred.TextInputFormat
               output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
@@ -771,28 +794,33 @@ STAGE PLANS:
                 columns.types string:string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                 name default.bucketmapjoin_tmp_result
+                numFiles 1
+                numPartitions 0
+                numRows 928
+                rawDataSize 17038
                 serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                transient_lastDdlTime 1366232039
+                totalSize 17966
+                transient_lastDdlTime 1366406115
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.bucketmapjoin_tmp_result
-          tmp directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10001
+          tmp directory: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10001
 
   Stage: Stage-2
     Stats-Aggr Operator
-      Stats Aggregation Key Prefix: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10000/
+      Stats Aggregation Key Prefix: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10000/
 
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
-              directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10000
+              directory: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10000
               NumFilesPerFileSink: 1
               table:
                   input format: org.apache.hadoop.mapred.TextInputFormat
@@ -803,12 +831,17 @@ STAGE PLANS:
                     columns.types string:string:string
                     file.inputformat org.apache.hadoop.mapred.TextInputFormat
                     file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                    location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                    location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                     name default.bucketmapjoin_tmp_result
+                    numFiles 1
+                    numPartitions 0
+                    numRows 928
+                    rawDataSize 17038
                     serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                    transient_lastDdlTime 1366232039
+                    totalSize 17966
+                    transient_lastDdlTime 1366406115
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                   name: default.bucketmapjoin_tmp_result
               TotalFiles: 1
@@ -816,9 +849,9 @@ STAGE PLANS:
               MultiFileSpray: false
       Needs Tagging: false
       Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002]
       Path -> Partition:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 
           Partition
             base file name: -ext-10002
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -829,12 +862,17 @@ STAGE PLANS:
               columns.types string:string:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+              location file:/user/hive/warehouse/bucketmapjoin_tmp_result
               name default.bucketmapjoin_tmp_result
+              numFiles 1
+              numPartitions 0
+              numRows 928
+              rawDataSize 17038
               serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              transient_lastDdlTime 1366232039
+              totalSize 17966
+              transient_lastDdlTime 1366406115
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -845,26 +883,31 @@ STAGE PLANS:
                 columns.types string:string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                 name default.bucketmapjoin_tmp_result
+                numFiles 1
+                numPartitions 0
+                numRows 928
+                rawDataSize 17038
                 serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                transient_lastDdlTime 1366232039
+                totalSize 17966
+                transient_lastDdlTime 1366406115
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.bucketmapjoin_tmp_result
             name: default.bucketmapjoin_tmp_result
       Truncated Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002]
 
   Stage: Stage-5
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
-              directory: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10000
+              directory: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10000
               NumFilesPerFileSink: 1
               table:
                   input format: org.apache.hadoop.mapred.TextInputFormat
@@ -875,12 +918,17 @@ STAGE PLANS:
                     columns.types string:string:string
                     file.inputformat org.apache.hadoop.mapred.TextInputFormat
                     file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                    location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                    location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                     name default.bucketmapjoin_tmp_result
+                    numFiles 1
+                    numPartitions 0
+                    numRows 928
+                    rawDataSize 17038
                     serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                     serialization.format 1
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                    transient_lastDdlTime 1366232039
+                    totalSize 17966
+                    transient_lastDdlTime 1366406115
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                   name: default.bucketmapjoin_tmp_result
               TotalFiles: 1
@@ -888,9 +936,9 @@ STAGE PLANS:
               MultiFileSpray: false
       Needs Tagging: false
       Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002]
       Path -> Partition:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 
           Partition
             base file name: -ext-10002
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -901,12 +949,17 @@ STAGE PLANS:
               columns.types string:string:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+              location file:/user/hive/warehouse/bucketmapjoin_tmp_result
               name default.bucketmapjoin_tmp_result
+              numFiles 1
+              numPartitions 0
+              numRows 928
+              rawDataSize 17038
               serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-              transient_lastDdlTime 1366232039
+              totalSize 17966
+              transient_lastDdlTime 1366406115
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -917,24 +970,29 @@ STAGE PLANS:
                 columns.types string:string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location hdfs://localhost:8020/user/hive/warehouse/bucketmapjoin_tmp_result
+                location file:/user/hive/warehouse/bucketmapjoin_tmp_result
                 name default.bucketmapjoin_tmp_result
+                numFiles 1
+                numPartitions 0
+                numRows 928
+                rawDataSize 17038
                 serialization.ddl struct bucketmapjoin_tmp_result { string key, string value1, string value2}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                transient_lastDdlTime 1366232039
+                totalSize 17966
+                transient_lastDdlTime 1366406115
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.bucketmapjoin_tmp_result
             name: default.bucketmapjoin_tmp_result
       Truncated Path -> Alias:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002 [hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002]
+        file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002 [file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002]
 
   Stage: Stage-6
     Move Operator
       files:
           hdfs directory: true
-          source: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10002
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_22-55-02_518_2705527731235189917/-ext-10000
+          source: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10002
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-15-36_811_5923421555111839319/-ext-10000
 
 
 
@@ -943,14 +1001,22 @@ insert overwrite table bucketmapjoin_tmp_result
 select /*+mapjoin(a)*/ a.key, a.value, b.value 
 from srcbucket_mapjoin a join srcbucket_mapjoin_part_2 b 
 on a.key=b.key
+2013-04-19 14:15:39,247 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-37_118_4533469189301580259/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:39,298 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-37_118_4533469189301580259/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:15:44,564 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-37_118_4533469189301580259/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:44,661 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-37_118_4533469189301580259/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_tmp_result
 
 
 select count(1) from bucketmapjoin_tmp_result
+2013-04-19 14:15:54,043 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-15-51_789_1377705809444588949/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:15:54,092 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-15-51_789_1377705809444588949/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0
 
 insert overwrite table bucketmapjoin_hash_result_1
 select sum(hash(key)), sum(hash(value1)), sum(hash(value2)) from bucketmapjoin_tmp_result
+2013-04-19 14:16:00,570 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-58_635_573632737373785528/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:16:00,605 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-15-58_635_573632737373785528/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_hash_result_1
 set hive.optimize.bucketmapjoin = false
 
@@ -958,18 +1024,28 @@ insert overwrite table bucketmapjoin_tmp_result
 select /*+mapjoin(a)*/ a.key, a.value, b.value 
 from srcbucket_mapjoin a join srcbucket_mapjoin_part_2 b 
 on a.key=b.key
+2013-04-19 14:16:09,404 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-16-07_426_1478093237563506172/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:16:09,443 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-16-07_426_1478093237563506172/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:16:13,312 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-16-07_426_1478093237563506172/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:16:13,348 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-16-07_426_1478093237563506172/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_tmp_result
 
 
 select count(1) from bucketmapjoin_tmp_result
+2013-04-19 14:16:21,098 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-16-19_245_7666377818536729098/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:16:21,146 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-16-19_245_7666377818536729098/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0
 
 insert overwrite table bucketmapjoin_hash_result_2
 select sum(hash(key)), sum(hash(value1)), sum(hash(value2)) from bucketmapjoin_tmp_result
+2013-04-19 14:16:27,245 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-16-25_357_6702336735850362047/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:16:27,314 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-16-25_357_6702336735850362047/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/bucketmapjoin_hash_result_2
 
 
 select a.key-b.key, a.value1-b.value1, a.value2-b.value2
 from bucketmapjoin_hash_result_1 a left outer join bucketmapjoin_hash_result_2 b
 on a.key = b.key
+2013-04-19 14:16:35,596 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-16-33_706_540814398147823660/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:16:35,647 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-16-33_706_540814398147823660/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 NULL	NULL	NULL

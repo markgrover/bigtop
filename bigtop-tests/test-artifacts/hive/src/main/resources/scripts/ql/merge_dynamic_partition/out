@@ -9,16 +9,16 @@ create table merge_dynamic_part like srcpart
 
 
 load data local inpath 'seed_data_files/srcbucket20.txt' INTO TABLE srcpart_merge_dp partition(ds='2008-04-08', hr=11)
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket20.txt
 
 load data local inpath 'seed_data_files/srcbucket21.txt' INTO TABLE srcpart_merge_dp partition(ds='2008-04-08', hr=11)
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket21.txt
 
 load data local inpath 'seed_data_files/srcbucket22.txt' INTO TABLE srcpart_merge_dp partition(ds='2008-04-08', hr=11)
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket22.txt
 
 load data local inpath 'seed_data_files/srcbucket23.txt' INTO TABLE srcpart_merge_dp partition(ds='2008-04-08', hr=11)
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/srcbucket23.txt
 set hive.input.format=org.apache.hadoop.hive.ql.io.BucketizedHiveInputFormat
 set hive.merge.mapfiles=false
 set hive.merge.mapredfiles=false
@@ -78,9 +78,13 @@ STAGE PLANS:
 
 
 insert overwrite table merge_dynamic_part partition (ds='2008-04-08', hr) select key, value, hr from srcpart_merge_dp where ds='2008-04-08'
+2013-04-19 14:04:43,349 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-04-40_560_2654221170279507346/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:04:43,422 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-04-40_560_2654221170279507346/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 
 
 select * from merge_dynamic_part order by key, value
+2013-04-19 14:04:54,366 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-04-51_900_8825830724078247890/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:04:54,491 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-04-51_900_8825830724078247890/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
@@ -584,8 +588,8 @@ select * from merge_dynamic_part order by key, value
 
 show table extended like `merge_dynamic_part`
 tableName:merge_dynamic_part
-owner:hdfs
-location:hdfs://localhost:8020/user/hive/warehouse/merge_dynamic_part
+owner:root
+location:file:/user/hive/warehouse/merge_dynamic_part
 inputformat:org.apache.hadoop.mapred.TextInputFormat
 outputformat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
 columns:struct columns { string key, string value}
@@ -595,8 +599,8 @@ totalNumberFiles:4
 totalFileSize:5812
 maxFileSize:1612
 minFileSize:1358
-lastAccessTime:1366235941443
-lastUpdateTime:1366235942142
+lastAccessTime:0
+lastUpdateTime:1366405491000
 
 set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat
 set hive.merge.mapfiles=true
@@ -648,7 +652,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-59-25_727_7110286182397380063/-ext-10000
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -669,7 +673,7 @@ STAGE PLANS:
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-59-25_727_7110286182397380063/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -682,7 +686,7 @@ STAGE PLANS:
   Stage: Stage-5
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-59-25_727_7110286182397380063/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -696,15 +700,19 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-59-25_727_7110286182397380063/-ext-10000
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10000
 
 
 
 insert overwrite table merge_dynamic_part partition (ds='2008-04-08', hr=11) select key, value from srcpart_merge_dp where ds='2008-04-08'
-Deleted hdfs://localhost:8020/user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
+2013-04-19 14:05:06,791 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-04_632_220302308903055777/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:05:06,824 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-04_632_220302308903055777/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+Deleted file:///user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
 
 
 select * from merge_dynamic_part order by key, value
+2013-04-19 14:05:16,039 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-13_790_8274299410012173272/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:05:16,146 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-13_790_8274299410012173272/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
@@ -1208,8 +1216,8 @@ select * from merge_dynamic_part order by key, value
 
 show table extended like `merge_dynamic_part`
 tableName:merge_dynamic_part
-owner:hdfs
-location:hdfs://localhost:8020/user/hive/warehouse/merge_dynamic_part
+owner:root
+location:file:/user/hive/warehouse/merge_dynamic_part
 inputformat:org.apache.hadoop.mapred.TextInputFormat
 outputformat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
 columns:struct columns { string key, string value}
@@ -1219,8 +1227,8 @@ totalNumberFiles:1
 totalFileSize:5812
 maxFileSize:5812
 minFileSize:5812
-lastAccessTime:1366235980589
-lastUpdateTime:1366235980710
+lastAccessTime:0
+lastUpdateTime:1366405511000
 
 set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat
 set hive.merge.mapfiles=true
@@ -1276,7 +1284,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-18_00-00-01_536_8218633325045046657/-ext-10000
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -1297,7 +1305,7 @@ STAGE PLANS:
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-18_00-00-01_536_8218633325045046657/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1310,7 +1318,7 @@ STAGE PLANS:
   Stage: Stage-5
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-18_00-00-01_536_8218633325045046657/-ext-10002 
+        file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1324,15 +1332,19 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-18_00-00-01_536_8218633325045046657/-ext-10000
+          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10000
 
 
 
 insert overwrite table merge_dynamic_part partition (ds, hr) select key, value, ds, hr from srcpart_merge_dp where ds='2008-04-08' and hr=11
-Deleted hdfs://localhost:8020/user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
+2013-04-19 14:05:24,447 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-22_055_5562278763508535270/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:05:24,515 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-22_055_5562278763508535270/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+Deleted file:///user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
 
 
 select * from merge_dynamic_part order by key, value
+2013-04-19 14:05:33,020 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-30_739_6782754052796289917/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:05:33,100 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-30_739_6782754052796289917/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
@@ -1836,8 +1848,8 @@ select * from merge_dynamic_part order by key, value
 
 show table extended like `merge_dynamic_part`
 tableName:merge_dynamic_part
-owner:hdfs
-location:hdfs://localhost:8020/user/hive/warehouse/merge_dynamic_part
+owner:root
+location:file:/user/hive/warehouse/merge_dynamic_part
 inputformat:org.apache.hadoop.mapred.TextInputFormat
 outputformat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
 columns:struct columns { string key, string value}
@@ -1847,6 +1859,6 @@ totalNumberFiles:1
 totalFileSize:5812
 maxFileSize:5812
 minFileSize:5812
-lastAccessTime:1366236016104
-lastUpdateTime:1366236016239
+lastAccessTime:0
+lastUpdateTime:1366405528000
 

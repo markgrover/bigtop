@@ -7,7 +7,7 @@ describe extended nzhang_part14
 key	string	
 value	string	
 	 	 
-Detailed Table Information	Table(tableName:nzhang_part14, dbName:default, owner:hdfs, createTime:1366235808, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:null), FieldSchema(name:value, type:string, comment:null)], location:hdfs://localhost:8020/user/hive/warehouse/nzhang_part14, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{}), storedAsSubDirectories:false), partitionKeys:[FieldSchema(name:value, type:string, comment:null)], parameters:{transient_lastDdlTime=1366235808}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
+Detailed Table Information	Table(tableName:nzhang_part14, dbName:default, owner:root, createTime:1366405190, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:key, type:string, comment:null), FieldSchema(name:value, type:string, comment:null)], location:file:/user/hive/warehouse/nzhang_part14, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=1}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{}), storedAsSubDirectories:false), partitionKeys:[FieldSchema(name:value, type:string, comment:null)], parameters:{transient_lastDdlTime=1366405190}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE)	
 set hive.exec.dynamic.partition=true
 set hive.exec.dynamic.partition.mode=nonstrict
 
@@ -73,7 +73,7 @@ STAGE PLANS:
   Stage: Stage-2
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-56-49_445_7192539552139512832/-mr-10002 
+        file:/tmp/hive-root/hive_2013-04-19_13-59-51_475_8906542102345496366/-mr-10002 
           TableScan
             Union
               Select Operator
@@ -91,7 +91,7 @@ STAGE PLANS:
                       output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
                       serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       name: default.nzhang_part14
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-56-49_445_7192539552139512832/-mr-10004 
+        file:/tmp/hive-root/hive_2013-04-19_13-59-51_475_8906542102345496366/-mr-10004 
           TableScan
             Union
               Select Operator
@@ -109,7 +109,7 @@ STAGE PLANS:
                       output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
                       serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       name: default.nzhang_part14
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-56-49_445_7192539552139512832/-mr-10005 
+        file:/tmp/hive-root/hive_2013-04-19_13-59-51_475_8906542102345496366/-mr-10005 
           TableScan
             Union
               Select Operator
@@ -135,7 +135,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-56-49_445_7192539552139512832/-ext-10000
+          destination: file:/tmp/hive-root/hive_2013-04-19_13-59-51_475_8906542102345496366/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -155,7 +155,7 @@ STAGE PLANS:
   Stage: Stage-4
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-56-49_445_7192539552139512832/-ext-10003 
+        file:/tmp/hive-root/hive_2013-04-19_13-59-51_475_8906542102345496366/-ext-10003 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -168,7 +168,7 @@ STAGE PLANS:
   Stage: Stage-6
     Map Reduce
       Alias -> Map Operator Tree:
-        hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-56-49_445_7192539552139512832/-ext-10003 
+        file:/tmp/hive-root/hive_2013-04-19_13-59-51_475_8906542102345496366/-ext-10003 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -182,7 +182,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: hdfs://localhost:8020/tmp/hive-hdfs/hive_2013-04-17_23-56-49_445_7192539552139512832/-ext-10000
+          destination: file:/tmp/hive-root/hive_2013-04-19_13-59-51_475_8906542102345496366/-ext-10000
 
   Stage: Stage-9
     Map Reduce
@@ -259,6 +259,16 @@ select key, value from (
   union all 
   select 'k3' as key, ' ' as value from src limit 2
 ) T
+2013-04-19 13:59:54,650 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 13:59:54,687 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:00:00,609 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10008/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:00:00,645 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10008/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:00:06,726 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10010/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:00:06,766 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10010/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:00:13,482 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10012/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:00:13,520 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10012/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
+2013-04-19 14:00:32,158 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10014/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:00:32,204 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_13-59-52_075_6047141600584006273/-local-10014/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 
 
 
@@ -269,6 +279,8 @@ value=__HIVE_DEFAULT_PARTITION__
 
 select * from nzhang_part14 where value <> 'a'
 order by key, value
+2013-04-19 14:00:40,536 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-00-38_404_8731322439927523161/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:00:40,611 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-00-38_404_8731322439927523161/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 k1	__HIVE_DEFAULT_PARTITION__
 k1	__HIVE_DEFAULT_PARTITION__
 k2	__HIVE_DEFAULT_PARTITION__

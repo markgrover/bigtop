@@ -13,11 +13,13 @@ STORED AS TEXTFILE
 
 LOAD DATA LOCAL INPATH 'seed_data_files/ml-data/u.data'
 OVERWRITE INTO TABLE u_data
-Copying file: file:/home/vagrant/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/ml-data/u.data
+Copying file: file:/root/bigtop/bigtop-tests/test-execution/smokes/hive/target/seed_data_files/ml-data/u.data
 Deleted /user/hive/warehouse/u_data
 
 
 INSERT OVERWRITE DIRECTORY '/tmp/count'
 SELECT COUNT(1) FROM u_data
+2013-04-19 14:01:13,359 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-01-10_423_5005504880450428675/-local-10001/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
+2013-04-19 14:01:13,433 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-01-10_423_5005504880450428675/-local-10001/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 dfs -cat /tmp/count/*
 100000
