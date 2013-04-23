@@ -78,13 +78,9 @@ STAGE PLANS:
 
 
 insert overwrite table merge_dynamic_part partition (ds='2008-04-08', hr) select key, value, hr from srcpart_merge_dp where ds='2008-04-08'
-2013-04-19 14:04:43,349 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-04-40_560_2654221170279507346/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:04:43,422 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-04-40_560_2654221170279507346/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 
 
 select * from merge_dynamic_part order by key, value
-2013-04-19 14:04:54,366 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-04-51_900_8825830724078247890/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:04:54,491 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-04-51_900_8825830724078247890/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
@@ -589,7 +585,7 @@ select * from merge_dynamic_part order by key, value
 show table extended like `merge_dynamic_part`
 tableName:merge_dynamic_part
 owner:root
-location:file:/user/hive/warehouse/merge_dynamic_part
+location:hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/merge_dynamic_part
 inputformat:org.apache.hadoop.mapred.TextInputFormat
 outputformat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
 columns:struct columns { string key, string value}
@@ -599,8 +595,8 @@ totalNumberFiles:4
 totalFileSize:5812
 maxFileSize:1612
 minFileSize:1358
-lastAccessTime:0
-lastUpdateTime:1366405491000
+lastAccessTime:1366742356513
+lastUpdateTime:1366742358466
 
 set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat
 set hive.merge.mapfiles=true
@@ -652,7 +648,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-39-51_354_5074906116987257301/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -673,7 +669,7 @@ STAGE PLANS:
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10002 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-39-51_354_5074906116987257301/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -686,7 +682,7 @@ STAGE PLANS:
   Stage: Stage-5
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10002 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-39-51_354_5074906116987257301/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -700,19 +696,15 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-04_310_1695613183457854656/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-39-51_354_5074906116987257301/-ext-10000
 
 
 
 insert overwrite table merge_dynamic_part partition (ds='2008-04-08', hr=11) select key, value from srcpart_merge_dp where ds='2008-04-08'
-2013-04-19 14:05:06,791 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-04_632_220302308903055777/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:05:06,824 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-04_632_220302308903055777/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-Deleted file:///user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
+Deleted hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
 
 
 select * from merge_dynamic_part order by key, value
-2013-04-19 14:05:16,039 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-13_790_8274299410012173272/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:05:16,146 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-13_790_8274299410012173272/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
@@ -1217,7 +1209,7 @@ select * from merge_dynamic_part order by key, value
 show table extended like `merge_dynamic_part`
 tableName:merge_dynamic_part
 owner:root
-location:file:/user/hive/warehouse/merge_dynamic_part
+location:hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/merge_dynamic_part
 inputformat:org.apache.hadoop.mapred.TextInputFormat
 outputformat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
 columns:struct columns { string key, string value}
@@ -1227,8 +1219,8 @@ totalNumberFiles:1
 totalFileSize:5812
 maxFileSize:5812
 minFileSize:5812
-lastAccessTime:0
-lastUpdateTime:1366405511000
+lastAccessTime:1366742405322
+lastUpdateTime:1366742405493
 
 set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat
 set hive.merge.mapfiles=true
@@ -1284,7 +1276,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-40-31_143_7299434649267988331/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -1305,7 +1297,7 @@ STAGE PLANS:
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10002 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-40-31_143_7299434649267988331/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1318,7 +1310,7 @@ STAGE PLANS:
   Stage: Stage-5
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10002 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-40-31_143_7299434649267988331/-ext-10002 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1332,19 +1324,15 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-05-21_786_5260447433478550523/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-40-31_143_7299434649267988331/-ext-10000
 
 
 
 insert overwrite table merge_dynamic_part partition (ds, hr) select key, value, ds, hr from srcpart_merge_dp where ds='2008-04-08' and hr=11
-2013-04-19 14:05:24,447 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-22_055_5562278763508535270/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:05:24,515 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-05-22_055_5562278763508535270/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-Deleted file:///user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
+Deleted hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/merge_dynamic_part/ds=2008-04-08/hr=11
 
 
 select * from merge_dynamic_part order by key, value
-2013-04-19 14:05:33,020 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-30_739_6782754052796289917/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:05:33,100 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-05-30_739_6782754052796289917/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
 0	val_0	2008-04-08	11
@@ -1849,7 +1837,7 @@ select * from merge_dynamic_part order by key, value
 show table extended like `merge_dynamic_part`
 tableName:merge_dynamic_part
 owner:root
-location:file:/user/hive/warehouse/merge_dynamic_part
+location:hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/merge_dynamic_part
 inputformat:org.apache.hadoop.mapred.TextInputFormat
 outputformat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
 columns:struct columns { string key, string value}
@@ -1859,6 +1847,6 @@ totalNumberFiles:1
 totalFileSize:5812
 maxFileSize:5812
 minFileSize:5812
-lastAccessTime:0
-lastUpdateTime:1366405528000
+lastAccessTime:1366742447479
+lastUpdateTime:1366742447704
 

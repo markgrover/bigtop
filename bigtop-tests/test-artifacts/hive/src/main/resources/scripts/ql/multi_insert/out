@@ -99,15 +99,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:08:25,823 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-08-23_084_1311080850859256019/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:08:25,905 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-08-23_084_1311080850859256019/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:08:38,000 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-08-35_319_6848211648872497512/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:08:38,052 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-08-35_319_6848211648872497512/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -120,8 +116,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:08:44,686 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-08-42_520_3082132774501900455/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:08:44,765 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-08-42_520_3082132774501900455/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 12	val_12
 12	val_12
@@ -212,7 +206,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -230,7 +224,7 @@ STAGE PLANS:
   Stage: Stage-4
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -243,7 +237,7 @@ STAGE PLANS:
   Stage: Stage-6
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -257,7 +251,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10000
 
   Stage: Stage-14
     Conditional Operator
@@ -266,7 +260,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10002
 
   Stage: Stage-1
     Move Operator
@@ -284,7 +278,7 @@ STAGE PLANS:
   Stage: Stage-10
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -297,7 +291,7 @@ STAGE PLANS:
   Stage: Stage-12
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -311,7 +305,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-08-49_212_1834756678584792284/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-46-51_613_5391391039842163435/-ext-10002
 
 
 
@@ -319,15 +313,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:08:51,844 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-08-49_362_5910997622327920967/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:08:51,973 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-08-49_362_5910997622327920967/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:09:03,791 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-01_459_6218586432026536316/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:09:03,859 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-01_459_6218586432026536316/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -340,8 +330,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:09:11,217 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-08_917_8986330040129937062/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:09:11,289 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-08_917_8986330040129937062/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 12	val_12
 12	val_12
@@ -447,15 +435,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:09:18,611 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-09-15_830_4888866576470655135/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:09:18,665 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-09-15_830_4888866576470655135/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:09:29,813 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-27_630_7444507544148833332/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:09:29,872 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-27_630_7444507544148833332/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -468,8 +452,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:09:37,289 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-34_858_995198914287478852/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:09:37,334 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-34_858_995198914287478852/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 12	val_12
 12	val_12
@@ -560,7 +542,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -578,7 +560,7 @@ STAGE PLANS:
   Stage: Stage-4
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -591,7 +573,7 @@ STAGE PLANS:
   Stage: Stage-6
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -605,7 +587,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10000
 
   Stage: Stage-14
     Conditional Operator
@@ -614,7 +596,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10002
 
   Stage: Stage-1
     Move Operator
@@ -632,7 +614,7 @@ STAGE PLANS:
   Stage: Stage-10
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -645,7 +627,7 @@ STAGE PLANS:
   Stage: Stage-12
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -659,7 +641,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-09-42_485_3166642426452779714/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-49-02_277_2523279370671085980/-ext-10002
 
 
 
@@ -667,15 +649,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:09:45,372 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-09-42_661_7358046645382429530/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:09:45,447 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-09-42_661_7358046645382429530/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi2
 Deleted /user/hive/warehouse/src_multi1
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:09:57,291 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-54_479_5192401837117904330/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:09:57,363 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-09-54_479_5192401837117904330/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -688,8 +666,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:10:04,436 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-02_331_7374361154066789158/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:10:04,499 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-02_331_7374361154066789158/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 12	val_12
 12	val_12
@@ -831,15 +807,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10 group by key, value
 insert overwrite table src_multi2 select * where key > 10 and key < 20 group by key, value
-2013-04-19 14:10:12,683 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-10-10_252_4382546190386232629/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:10:12,748 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-10-10_252_4382546190386232629/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:10:25,233 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-22_886_3047062916416447740/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:10:25,282 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-22_886_3047062916416447740/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -854,8 +826,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:10:32,496 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-30_626_589439045353386493/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:10:32,546 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-30_626_589439045353386493/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -985,7 +955,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -1003,7 +973,7 @@ STAGE PLANS:
   Stage: Stage-4
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1016,7 +986,7 @@ STAGE PLANS:
   Stage: Stage-6
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1030,7 +1000,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10000
 
   Stage: Stage-14
     Conditional Operator
@@ -1039,7 +1009,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10002
 
   Stage: Stage-1
     Move Operator
@@ -1057,7 +1027,7 @@ STAGE PLANS:
   Stage: Stage-10
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1070,7 +1040,7 @@ STAGE PLANS:
   Stage: Stage-12
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1084,7 +1054,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-10-36_659_1509723719555016130/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-51-13_762_9056111985287922984/-ext-10002
 
 
 
@@ -1092,15 +1062,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10 group by key, value
 insert overwrite table src_multi2 select * where key > 10 and key < 20 group by key, value
-2013-04-19 14:10:39,020 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-10-36_793_4459623071739261658/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:10:39,069 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-10-36_793_4459623071739261658/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:10:48,804 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-47_017_1483164868011332513/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:10:48,852 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-47_017_1483164868011332513/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -1115,8 +1081,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:10:55,513 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-53_603_445991461167611880/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:10:55,553 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-10-53_603_445991461167611880/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -1261,15 +1225,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10 group by key, value
 insert overwrite table src_multi2 select * where key > 10 and key < 20 group by key, value
-2013-04-19 14:11:01,803 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-10-59_800_7410385402960934668/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:01,842 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-10-59_800_7410385402960934668/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:11:11,938 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-09_637_2311518351430684431/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:12,027 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-09_637_2311518351430684431/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -1284,8 +1244,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:11:19,348 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-17_057_885432453283566125/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:19,407 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-17_057_885432453283566125/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -1415,7 +1373,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -1433,7 +1391,7 @@ STAGE PLANS:
   Stage: Stage-4
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1446,7 +1404,7 @@ STAGE PLANS:
   Stage: Stage-6
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1460,7 +1418,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10000
 
   Stage: Stage-14
     Conditional Operator
@@ -1469,7 +1427,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10002
 
   Stage: Stage-1
     Move Operator
@@ -1487,7 +1445,7 @@ STAGE PLANS:
   Stage: Stage-10
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1500,7 +1458,7 @@ STAGE PLANS:
   Stage: Stage-12
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1514,7 +1472,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-11-23_379_1344248184930364093/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-53-37_756_7049471615260796328/-ext-10002
 
 
 
@@ -1522,15 +1480,11 @@ STAGE PLANS:
 from src
 insert overwrite table src_multi1 select * where key < 10 group by key, value
 insert overwrite table src_multi2 select * where key > 10 and key < 20 group by key, value
-2013-04-19 14:11:25,672 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-11-23_535_1499903894712397606/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:25,710 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-11-23_535_1499903894712397606/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-Deleted /user/hive/warehouse/src_multi2
 Deleted /user/hive/warehouse/src_multi1
+Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:11:35,973 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-34_028_8263894060738444014/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:36,023 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-34_028_8263894060738444014/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -1545,8 +1499,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:11:41,863 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-40_108_6392817009663596096/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:41,904 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-40_108_6392817009663596096/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 11	val_11
 12	val_12
@@ -1712,15 +1664,11 @@ STAGE PLANS:
 from (select * from src  union all select * from src) s
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:11:48,447 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-11-46_389_1705105014858411014/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:48,479 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-11-46_389_1705105014858411014/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:11:58,983 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-56_783_9094867790835545706/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:11:59,070 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-11-56_783_9094867790835545706/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -1743,8 +1691,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:12:06,571 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-04_346_8276658515550918930/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:12:06,628 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-04_346_8276658515550918930/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 11	val_11
 12	val_12
@@ -1901,7 +1847,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -1919,7 +1865,7 @@ STAGE PLANS:
   Stage: Stage-4
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1932,7 +1878,7 @@ STAGE PLANS:
   Stage: Stage-6
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1946,7 +1892,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10000
 
   Stage: Stage-14
     Conditional Operator
@@ -1955,7 +1901,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10002
 
   Stage: Stage-1
     Move Operator
@@ -1973,7 +1919,7 @@ STAGE PLANS:
   Stage: Stage-10
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -1986,7 +1932,7 @@ STAGE PLANS:
   Stage: Stage-12
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -2000,7 +1946,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-12-11_531_3637632255450992885/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-55-55_675_1061131400972282069/-ext-10002
 
 
 
@@ -2008,15 +1954,11 @@ STAGE PLANS:
 from (select * from src  union all select * from src) s
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:12:14,363 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-12-11_874_8643623983954717875/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:12:14,439 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-12-11_874_8643623983954717875/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-Deleted /user/hive/warehouse/src_multi2
 Deleted /user/hive/warehouse/src_multi1
+Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:12:25,925 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-24_157_363052991432327967/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:12:25,965 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-24_157_363052991432327967/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -2039,8 +1981,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:12:31,895 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-30_049_1995672373447253571/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:12:31,944 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-30_049_1995672373447253571/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 11	val_11
 12	val_12
@@ -2212,15 +2152,11 @@ STAGE PLANS:
 from (select * from src  union all select * from src) s
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:12:38,678 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-12-36_162_3549271455096966565/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:12:38,800 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-12-36_162_3549271455096966565/-local-10004/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:12:49,724 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-47_903_8396891744089509029/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:12:49,764 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-47_903_8396891744089509029/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -2243,8 +2179,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:12:55,709 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-53_898_8425793509918783876/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:12:55,796 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-12-53_898_8425793509918783876/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 11	val_11
 12	val_12
@@ -2401,7 +2335,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10000
 
   Stage: Stage-0
     Move Operator
@@ -2419,7 +2353,7 @@ STAGE PLANS:
   Stage: Stage-4
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -2432,7 +2366,7 @@ STAGE PLANS:
   Stage: Stage-6
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10004 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10004 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -2446,7 +2380,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10000
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10000
 
   Stage: Stage-14
     Conditional Operator
@@ -2455,7 +2389,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10002
 
   Stage: Stage-1
     Move Operator
@@ -2473,7 +2407,7 @@ STAGE PLANS:
   Stage: Stage-10
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -2486,7 +2420,7 @@ STAGE PLANS:
   Stage: Stage-12
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10005 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10005 
             File Output Operator
               compressed: false
               GlobalTableId: 0
@@ -2500,7 +2434,7 @@ STAGE PLANS:
     Move Operator
       files:
           hdfs directory: true
-          destination: file:/tmp/hive-root/hive_2013-04-19_14-13-00_144_8741362561279096790/-ext-10002
+          destination: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-57-55_729_3800954041756388684/-ext-10002
 
 
 
@@ -2508,15 +2442,11 @@ STAGE PLANS:
 from (select * from src  union all select * from src) s
 insert overwrite table src_multi1 select * where key < 10
 insert overwrite table src_multi2 select * where key > 10 and key < 20
-2013-04-19 14:13:02,333 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-13-00_267_8159747987511429367/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:13:02,387 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-13-00_267_8159747987511429367/-local-10006/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-Deleted /user/hive/warehouse/src_multi1
 Deleted /user/hive/warehouse/src_multi2
+Deleted /user/hive/warehouse/src_multi1
 
 
 select * from src_multi1 order by key, value
-2013-04-19 14:13:13,691 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-11_551_2707707526353297661/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:13:13,749 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-11_551_2707707526353297661/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0	val_0
 0	val_0
 0	val_0
@@ -2539,8 +2469,6 @@ select * from src_multi1 order by key, value
 9	val_9
 
 select * from src_multi2 order by key, value
-2013-04-19 14:13:20,422 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-18_587_2189280975679278059/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:13:20,472 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-18_587_2189280975679278059/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 11	val_11
 11	val_11
 12	val_12
@@ -2661,8 +2589,6 @@ from src
 insert overwrite local directory '/tmp/hive_test/multiins_local/0' select * where key = 0
 insert overwrite local directory '/tmp/hive_test/multiins_local/2' select * where key = 2
 insert overwrite local directory '/tmp/hive_test/multiins_local/4' select * where key = 4
-2013-04-19 14:13:26,746 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-24_506_8964990197756142011/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:13:26,850 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-24_506_8964990197756142011/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0
 2
 4
@@ -2768,8 +2694,6 @@ from src
 insert overwrite local directory '/tmp/hive_test/multiins_local/0' select * where key = 0
 insert overwrite local directory '/tmp/hive_test/multiins_local/2' select * where key = 2
 insert overwrite local directory '/tmp/hive_test/multiins_local/4' select * where key = 4
-2013-04-19 14:13:34,067 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-31_988_5810985778720012242/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:13:34,146 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-31_988_5810985778720012242/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0
 2
 4
@@ -2876,8 +2800,6 @@ from src
 insert overwrite local directory '/tmp/hive_test/multiins_local/0' select * where key = 0
 insert overwrite local directory '/tmp/hive_test/multiins_local/2' select * where key = 2
 insert overwrite local directory '/tmp/hive_test/multiins_local/4' select * where key = 4
-2013-04-19 14:13:41,714 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-39_446_8776628335828513287/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:13:41,787 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-39_446_8776628335828513287/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0
 2
 4
@@ -2983,8 +2905,6 @@ from src
 insert overwrite local directory '/tmp/hive_test/multiins_local/0' select * where key = 0
 insert overwrite local directory '/tmp/hive_test/multiins_local/2' select * where key = 2
 insert overwrite local directory '/tmp/hive_test/multiins_local/4' select * where key = 4
-2013-04-19 14:13:49,473 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-47_132_861731282207209340/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:13:49,589 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-13-47_132_861731282207209340/-local-10003/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 0
 2
 4

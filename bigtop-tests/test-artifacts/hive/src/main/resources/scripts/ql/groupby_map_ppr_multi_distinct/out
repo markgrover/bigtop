@@ -75,10 +75,10 @@ STAGE PLANS:
                         type: bigint
       Needs Tagging: false
       Path -> Alias:
-        file:/user/hive/warehouse/srcpart/ds=2008-04-08/hr=11 [src]
-        file:/user/hive/warehouse/srcpart/ds=2008-04-08/hr=12 [src]
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart/ds=2008-04-08/hr=11 [src]
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart/ds=2008-04-08/hr=12 [src]
       Path -> Partition:
-        file:/user/hive/warehouse/srcpart/ds=2008-04-08/hr=11 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart/ds=2008-04-08/hr=11 
           Partition
             base file name: hr=11
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -92,7 +92,7 @@ STAGE PLANS:
               columns.types string:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location file:/user/hive/warehouse/srcpart/ds=2008-04-08/hr=11
+              location hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart/ds=2008-04-08/hr=11
               name default.srcpart
               numFiles 1
               numPartitions 4
@@ -103,7 +103,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               totalSize 5812
-              transient_lastDdlTime 1366403642
+              transient_lastDdlTime 1366737715
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -114,7 +114,7 @@ STAGE PLANS:
                 columns.types string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location file:/user/hive/warehouse/srcpart
+                location hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart
                 name default.srcpart
                 numFiles 4
                 numPartitions 4
@@ -125,11 +125,11 @@ STAGE PLANS:
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 totalSize 23248
-                transient_lastDdlTime 1366403644
+                transient_lastDdlTime 1366737718
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.srcpart
             name: default.srcpart
-        file:/user/hive/warehouse/srcpart/ds=2008-04-08/hr=12 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart/ds=2008-04-08/hr=12 
           Partition
             base file name: hr=12
             input format: org.apache.hadoop.mapred.TextInputFormat
@@ -143,7 +143,7 @@ STAGE PLANS:
               columns.types string:string
               file.inputformat org.apache.hadoop.mapred.TextInputFormat
               file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-              location file:/user/hive/warehouse/srcpart/ds=2008-04-08/hr=12
+              location hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart/ds=2008-04-08/hr=12
               name default.srcpart
               numFiles 1
               numPartitions 4
@@ -154,7 +154,7 @@ STAGE PLANS:
               serialization.format 1
               serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               totalSize 5812
-              transient_lastDdlTime 1366403642
+              transient_lastDdlTime 1366737716
             serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
           
               input format: org.apache.hadoop.mapred.TextInputFormat
@@ -165,7 +165,7 @@ STAGE PLANS:
                 columns.types string:string
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location file:/user/hive/warehouse/srcpart
+                location hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/srcpart
                 name default.srcpart
                 numFiles 4
                 numPartitions 4
@@ -176,7 +176,7 @@ STAGE PLANS:
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 totalSize 23248
-                transient_lastDdlTime 1366403644
+                transient_lastDdlTime 1366737718
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.srcpart
             name: default.srcpart
@@ -222,9 +222,9 @@ STAGE PLANS:
               File Output Operator
                 compressed: false
                 GlobalTableId: 1
-                directory: file:/tmp/hive-root/hive_2013-04-19_14-02-39_441_4426937035454659832/-ext-10000
+                directory: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-34-17_553_86036101665952261/-ext-10000
                 NumFilesPerFileSink: 1
-                Stats Publishing Key Prefix: file:/tmp/hive-root/hive_2013-04-19_14-02-39_441_4426937035454659832/-ext-10000/
+                Stats Publishing Key Prefix: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-34-17_553_86036101665952261/-ext-10000/
                 table:
                     input format: org.apache.hadoop.mapred.TextInputFormat
                     output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
@@ -234,12 +234,12 @@ STAGE PLANS:
                       columns.types string:int:string:int:int
                       file.inputformat org.apache.hadoop.mapred.TextInputFormat
                       file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                      location file:/user/hive/warehouse/dest1
+                      location hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/dest1
                       name default.dest1
                       serialization.ddl struct dest1 { string key, i32 c1, string c2, i32 c3, i32 c4}
                       serialization.format 1
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                      transient_lastDdlTime 1366405358
+                      transient_lastDdlTime 1366742057
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: default.dest1
                 TotalFiles: 1
@@ -253,7 +253,7 @@ STAGE PLANS:
     Move Operator
       tables:
           replace: true
-          source: file:/tmp/hive-root/hive_2013-04-19_14-02-39_441_4426937035454659832/-ext-10000
+          source: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-34-17_553_86036101665952261/-ext-10000
           table:
               input format: org.apache.hadoop.mapred.TextInputFormat
               output format: org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
@@ -263,19 +263,19 @@ STAGE PLANS:
                 columns.types string:int:string:int:int
                 file.inputformat org.apache.hadoop.mapred.TextInputFormat
                 file.outputformat org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
-                location file:/user/hive/warehouse/dest1
+                location hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/user/hive/warehouse/dest1
                 name default.dest1
                 serialization.ddl struct dest1 { string key, i32 c1, string c2, i32 c3, i32 c4}
                 serialization.format 1
                 serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
-                transient_lastDdlTime 1366405358
+                transient_lastDdlTime 1366742057
               serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
               name: default.dest1
-          tmp directory: file:/tmp/hive-root/hive_2013-04-19_14-02-39_441_4426937035454659832/-ext-10001
+          tmp directory: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-34-17_553_86036101665952261/-ext-10001
 
   Stage: Stage-2
     Stats-Aggr Operator
-      Stats Aggregation Key Prefix: file:/tmp/hive-root/hive_2013-04-19_14-02-39_441_4426937035454659832/-ext-10000/
+      Stats Aggregation Key Prefix: hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-34-17_553_86036101665952261/-ext-10000/
 
 
 
@@ -285,8 +285,6 @@ INSERT OVERWRITE TABLE dest1
 SELECT substr(src.key,1,1), count(DISTINCT substr(src.value,5)), concat(substr(src.key,1,1),sum(substr(src.value,5))), sum(DISTINCT substr(src.value, 5)), count(DISTINCT src.value) 
 WHERE src.ds = '2008-04-08'
 GROUP BY substr(src.key,1,1)
-2013-04-19 14:02:43,100 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-02-40_502_2365353122673110962/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:02:43,168 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/hive-root/hive_2013-04-19_14-02-40_502_2365353122673110962/-local-10002/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 Deleted /user/hive/warehouse/dest1
 
 

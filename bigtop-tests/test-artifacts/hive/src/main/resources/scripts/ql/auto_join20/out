@@ -131,7 +131,7 @@ STAGE PLANS:
   Stage: Stage-2
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/root/hive_2013-04-19_14-03-08_177_359077062232206643/-mr-10002 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-35-58_309_5301659382942807999/-mr-10002 
             Reduce Output Operator
               key expressions:
                     expr: _col0
@@ -194,7 +194,7 @@ STAGE PLANS:
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/root/hive_2013-04-19_14-03-08_177_359077062232206643/-mr-10003 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-35-58_309_5301659382942807999/-mr-10003 
             Reduce Output Operator
               sort order: 
               tag: -1
@@ -332,14 +332,6 @@ SELECT src1.key as k1, src1.value as v1, src2.key as k2, src2.value as v2 , src3
 FROM src src1 JOIN src src2 ON (src1.key = src2.key AND src1.key < 10) RIGHT OUTER JOIN src src3 ON (src1.key = src3.key AND src3.key < 20)
 SORT BY k1,v1,k2,v2,k3,v3
 )a
-2013-04-19 14:03:22,711 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:03:22,757 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-2013-04-19 14:03:27,318 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10008/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:03:27,437 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10008/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-2013-04-19 14:03:35,344 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10010/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:03:35,405 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10010/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-2013-04-19 14:03:43,057 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10012/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:03:43,128 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-19_079_183695059048497406/-local-10012/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 56157587016
 
 
@@ -473,7 +465,7 @@ STAGE PLANS:
   Stage: Stage-2
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/root/hive_2013-04-19_14-03-48_158_1833073367318880875/-mr-10002 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-37-20_822_7360885266220174309/-mr-10002 
             Reduce Output Operator
               key expressions:
                     expr: _col0
@@ -536,7 +528,7 @@ STAGE PLANS:
   Stage: Stage-3
     Map Reduce
       Alias -> Map Operator Tree:
-        file:/tmp/root/hive_2013-04-19_14-03-48_158_1833073367318880875/-mr-10003 
+        hdfs://mgrover-bigtop-centos-1.ent.cloudera.com:17020/tmp/hive-root/hive_2013-04-23_11-37-20_822_7360885266220174309/-mr-10003 
             Reduce Output Operator
               sort order: 
               tag: -1
@@ -674,12 +666,4 @@ SELECT src1.key as k1, src1.value as v1, src2.key as k2, src2.value as v2 , src3
 FROM src src1 JOIN src src2 ON (src1.key = src2.key AND src1.key < 10 AND src2.key < 15) RIGHT OUTER JOIN src src3 ON (src1.key = src3.key AND src3.key < 20)
 SORT BY k1,v1,k2,v2,k3,v3
 )a
-2013-04-19 14:03:51,580 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:03:51,654 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10007/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-2013-04-19 14:03:57,173 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10008/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:03:57,215 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10008/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-2013-04-19 14:04:03,519 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10010/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:04:03,553 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10010/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
-2013-04-19 14:04:09,445 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10012/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.retry.interval;  Ignoring.
-2013-04-19 14:04:09,511 WARN  [main] conf.Configuration (Configuration.java:loadProperty(2032)) - file:/tmp/root/hive_2013-04-19_14-03-48_826_2362532110808187691/-local-10012/jobconf.xml:an attempt to override final parameter: mapreduce.job.end-notification.max.attempts;  Ignoring.
 56157587016
