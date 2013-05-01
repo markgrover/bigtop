@@ -35,11 +35,7 @@ import org.apache.bigtop.itest.ParameterSetter;
 import org.apache.bigtop.itest.Property;
 import org.apache.bigtop.itest.shell.Shell;
 
-@Contract(
-  properties = {
-    @Property(name="something", type=Property.Type.INT, longValue=1000, intValue=1000, defaultValue="1000")
-  },
-  env = {})
+@RunWith(OrderedParameterized.class)
 public class IntegrationTestHcatalogSmoke {
 
   public static Shell sh = new Shell("/bin/bash -s")
@@ -50,8 +46,8 @@ public class IntegrationTestHcatalogSmoke {
 
   @AfterClass
   public static void tearDown() {
-	  sh.execute("rm -f *.actual")
-	  sh.execute("hive -e \"DROP TABLE IF EXISTS hcat_basic\")
+	  sh.exec("rm -f *.actual")
+	  sh.exec("hive -e \"DROP TABLE IF EXISTS hcat_basic\")
       sh.exec("hadoop fs -rmr -skipTrash /user/hive/warehouse")
   }
 
@@ -60,20 +56,20 @@ public class IntegrationTestHcatalogSmoke {
    * Validate that the table created via hcat exists from Hive's world view
    */
   public void testBasic() throws SQLException {
-	  sh.execute("""hcat -e "CREATE TABLE hcat_basic(key string, value string) \
+	  sh.exec("""hcat -e "CREATE TABLE hcat_basic(key string, value string) \
                  PARTITIONED BY (dt STRING) \
                  ROW FORMAT DELIMITED FIELDS TERMINATED BY ','" """)
 	  ret = sh.getRet()
 	  assertTrue("Could not create table via hcat, return code: " + ret, ret == 0)
 	  
-	  sh.execute("""
+	  sh.exec("""
       hive -e \"DESCRIBE TABLE hcat_basic\" > hive_hcat_basic_verify.actual
       diff -u hcat_basic_verify.expected hive_hcat_basic_verify.actual
       """)
 	  assertEquals("hive couldn't detect the table created via hcat, return code: " + sh.ret,
 		  0, sh.ret);
 
-	  sh.execute("""
+	  sh.exec("""
       hive -e \"DESCRIBE TABLE hcat_basic\" > hcat_hcat_basic_verify.actual
       diff -u hcat_basic_verify.expected hcat_hcat_basic_verify.actual
       """)
@@ -81,38 +77,38 @@ public class IntegrationTestHcatalogSmoke {
 		  0, sh.ret);
 	  
 	  // Add a partition via hive
-	  sh.execute("hive -e \"ALTER TABLE hcat_basic ADD PARTITION (dt='2013-01-01')\"")
+	  sh.exec("hive -e \"ALTER TABLE hcat_basic ADD PARTITION (dt='2013-01-01')\"")
 	  // Add another partition via hcat
-	  sh.execute("hcat -e \"ALTER TABLE hcat_basic ADD PARTITION (dt='2013-01-02')\"")
+	  sh.exec("hcat -e \"ALTER TABLE hcat_basic ADD PARTITION (dt='2013-01-02')\"")
 
-	  sh.execute("""
+	  sh.exec("""
       hive -e "SHOW PARTITIONS hcat_basic" > hive_hcat_basic_partitions.actual
       diff -u hcat_basic_partitions.expected hive_hcat_basic_partitions.actual
       """)
 	  assertEquals("hive couldn't detect all the partitions of the table, return code: " + sh.ret, 0, sh.ret)
 	  
-	  sh.execute("""
+	  sh.exec("""
       hcat -e "SHOW PARTITIONS hcat_basic" > hcat_hcat_basic_partitions.actual
       diff -u hcat_basic_partitions.expected hcat_hcat_basic_partitions.actual
       """)
 	  assertEquals("hcat couldn't detect all the partitions of the table, return code: " + sh.ret, 0, sh.ret)
 	  
 	  // Load data into various partitions of the table
-	  sh.execute("""
+	  sh.exec("""
       hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-01.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-01')"
       hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-02.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-02')"
       """)
 	  assertEquals("Error in loading data in table, return code: " + sh.ret, 0, sh.ret)
 	  
 	  // Count the number of records via hive
-	  sh.execute("""
+	  sh.exec("""
       hive -e "SELECT COUNT(*) FROM hcat_basic" > hive_hcat_basic_count.actual
       diff -u hcat_basic_count.expected hive_hcat_basic_count.actual
       """)
 	  assertEquals("hive's count of records doesn't match expected count, return code: " + sh.ret, 0, sh.ret)
 	  
 	  // Test Pig's integration with HCatalog
-	  sh.execute("""
+	  sh.exec("""
       pig -useHCatalog -e "\
       REGISTER /usr/lib/hcatalog/share/hcatalog/*.jar; \
       REGISTER /usr/lib/hive/lib/*.jar; \
@@ -124,7 +120,7 @@ public class IntegrationTestHcatalogSmoke {
       """)
 	  assertEquals("pig's count of records doesn't match expected count, return code: " + sh.ret, 0, sh.ret)
 	  
-	  sh.execute("""
+	  sh.exec("""
       hcat -e "DROP TABLE hcat_basic"
       """)
 	  assertEquals("hcat wasn't able to drop table hcat_basic, return code: " + sh.ret, 0, sh.ret)
