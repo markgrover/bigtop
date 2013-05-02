@@ -32,6 +32,7 @@ import static org.junit.Assert.assertEquals
 
 import org.apache.bigtop.itest.junit.OrderedParameterized
 import org.junit.runner.RunWith
+import org.junit.runners.Parameterized.Parameters
 import org.apache.bigtop.itest.Contract
 import org.apache.bigtop.itest.ParameterSetter
 import org.apache.bigtop.itest.Property
@@ -130,9 +131,9 @@ public class TestHcatalogBasic {
 	  
   }
   
-  @Parameters
-  public static Map<String, Object[]> readTestCases() {
-	return null;
+    @Parameters
+    public static Map<String, Object[]> readTestCases() {
+	return new HashMap<String, Object[]>();
   }
 
   
