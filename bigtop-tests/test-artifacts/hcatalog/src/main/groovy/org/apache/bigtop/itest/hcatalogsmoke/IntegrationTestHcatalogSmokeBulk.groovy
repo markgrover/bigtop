@@ -47,7 +47,7 @@ public class IntegrationTestHcatalogSmoke {
   @AfterClass
   public static void tearDown() {
 	  sh.exec("rm -f *.actual")
-	  sh.exec("hive -e \"DROP TABLE IF EXISTS hcat_basic\")
+	  sh.exec("hive -e \"DROP TABLE IF EXISTS hcat_basic\"")
       sh.exec("hadoop fs -rmr -skipTrash /user/hive/warehouse")
   }
 
