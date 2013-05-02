@@ -137,7 +137,7 @@ public class TestHcatalogBasic {
   
     @Parameters
     public static Map<String, Object[]> readTestCases() {
-		result = new HashMap<String, Object[]>()
+		Map<String, Object[]> result = new HashMap<String, Object[]>()
 		result.put(new String(), new Object[0])
 		return result;
   }
