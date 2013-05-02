@@ -51,10 +51,11 @@ public class IntegrationTestHcatalogSmoke {
       sh.exec("hadoop fs -rmr -skipTrash /user/hive/warehouse")
   }
 
-  @Test(timeout=10000L)
+  
   /**
    * Validate that the table created via hcat exists from Hive's world view
    */
+  @Test
   public void testBasic() throws SQLException {
 	  sh.exec("""hcat -e "CREATE TABLE hcat_basic(key string, value string) \
                  PARTITIONED BY (dt STRING) \
