@@ -16,25 +16,26 @@
  * limitations under the License.
  */
 
-package org.apache.bigtop.itest.hcatalogsmoke;
+package org.apache.bigtop.itest.hcatalogsmoke
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Date;
+import java.util.ArrayList
+import java.util.List
+import java.util.Date
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
+import org.junit.After
+import org.junit.AfterClass
+import org.junit.Before
+import org.junit.BeforeClass
+import org.junit.Test
+import static org.junit.Assert.assertTrue
+import static org.junit.Assert.assertEquals
 
 import org.apache.bigtop.itest.junit.OrderedParameterized
-import org.apache.bigtop.itest.Contract;
-import org.apache.bigtop.itest.ParameterSetter;
-import org.apache.bigtop.itest.Property;
-import org.apache.bigtop.itest.shell.Shell;
+import org.junit.runner.RunWith
+import org.apache.bigtop.itest.Contract
+import org.apache.bigtop.itest.ParameterSetter
+import org.apache.bigtop.itest.Property
+import org.apache.bigtop.itest.shell.Shell
 
 @RunWith(OrderedParameterized.class)
 public class IntegrationTestHcatalogSmoke {
