@@ -43,6 +43,10 @@ public class TestHcatalogBasic {
 
   public static Shell sh = new Shell("/bin/bash -s")
   
+  public TestHcatalogBasic() {
+	}
+  
+  
   @BeforeClass
   public static void setUp() {	  
   }
@@ -133,7 +137,7 @@ public class TestHcatalogBasic {
   
     @Parameters
     public static Map<String, Object[]> readTestCases() {
-	return new HashMap<String, Object[]>();
+		return new HashMap<String, Object[]>();
   }
 
   
