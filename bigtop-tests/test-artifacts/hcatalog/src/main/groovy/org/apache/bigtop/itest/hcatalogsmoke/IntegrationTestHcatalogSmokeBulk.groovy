@@ -58,7 +58,7 @@ public class IntegrationTestHcatalogSmoke {
    * Validate that the table created via hcat exists from Hive's world view
    */
   @Test
-  public void testBasic() throws SQLException {
+  public void testBasic() {
 	  sh.exec("""hcat -e "CREATE TABLE hcat_basic(key string, value string) \
                  PARTITIONED BY (dt STRING) \
                  ROW FORMAT DELIMITED FIELDS TERMINATED BY ','" """)
@@ -129,5 +129,5 @@ public class IntegrationTestHcatalogSmoke {
 	  assertEquals("hcat wasn't able to drop table hcat_basic, return code: " + sh.ret, 0, sh.ret)
 	  
   }
-
+  
 }
