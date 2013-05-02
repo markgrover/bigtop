@@ -30,6 +30,7 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 
+import org.apache.bigtop.itest.junit.OrderedParameterized
 import org.apache.bigtop.itest.Contract;
 import org.apache.bigtop.itest.ParameterSetter;
 import org.apache.bigtop.itest.Property;
