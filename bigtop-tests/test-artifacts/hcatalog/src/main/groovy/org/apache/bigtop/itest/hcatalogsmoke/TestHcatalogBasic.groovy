@@ -132,19 +132,7 @@ public class TestHcatalogBasic {
   
   @Parameters
   public static Map<String, Object[]> readTestCases() {
-	List<String> tests;
-	if (test_include != null) {
-	  tests = scripts.getScripts().intersect(Arrays.asList(test_include.split(",")));
-	} else if (test_exclude != null) {
-	  tests = scripts.getScripts() - Arrays.asList(test_exclude.split(","));
-	} else {
-	  tests = scripts.getScripts();
-	}
-	Map res = [:];
-	tests.each {
-	  res[it] = ([it] as String[]);
-	};
-	return res;
+	return null;
   }
 
   
