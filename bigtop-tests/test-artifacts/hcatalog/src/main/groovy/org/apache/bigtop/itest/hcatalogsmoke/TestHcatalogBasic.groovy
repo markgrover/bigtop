@@ -67,18 +67,17 @@ public class TestHcatalogBasic {
 	  sh.exec("""hcat -e "CREATE TABLE hcat_basic(key string, value string) \
                  PARTITIONED BY (dt STRING) \
                  ROW FORMAT DELIMITED FIELDS TERMINATED BY ','" """)
-	  ret = sh.getRet()
-	  assertTrue("Could not create table via hcat, return code: " + ret, ret == 0)
+	  assertTrue("Could not create table via hcat, return code: " + sh.ret, sh.ret == 0)
 	  
 	  sh.exec("""
-      hive -e \"DESCRIBE TABLE hcat_basic\" > hive_hcat_basic_verify.actual
+      hive -e "DESCRIBE TABLE hcat_basic" > hive_hcat_basic_verify.actual
       diff -u hcat_basic_verify.expected hive_hcat_basic_verify.actual
       """)
 	  assertEquals("hive couldn't detect the table created via hcat, return code: " + sh.ret,
 		  0, sh.ret);
 
 	  sh.exec("""
-      hive -e \"DESCRIBE TABLE hcat_basic\" > hcat_hcat_basic_verify.actual
+      hcat -e "DESCRIBE TABLE hcat_basic" > hcat_hcat_basic_verify.actual
       diff -u hcat_basic_verify.expected hcat_hcat_basic_verify.actual
       """)
 	  assertEquals("hcat couldn't detect the table created via hcat, return code: " + sh.ret,
