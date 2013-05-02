@@ -38,7 +38,7 @@ import org.apache.bigtop.itest.Property
 import org.apache.bigtop.itest.shell.Shell
 
 @RunWith(OrderedParameterized.class)
-public class IntegrationTestHcatalogSmoke {
+public class TestHcatalogBasic {
 
   public static Shell sh = new Shell("/bin/bash -s")
   
@@ -98,8 +98,8 @@ public class IntegrationTestHcatalogSmoke {
 	  
 	  // Load data into various partitions of the table
 	  sh.exec("""
-      hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-01.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-01')"
-      hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-02.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-02')"
+      hcat -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-01.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-01')"
+      hcat -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-02.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-02')"
       """)
 	  assertEquals("Error in loading data in table, return code: " + sh.ret, 0, sh.ret)
 	  
@@ -129,5 +129,23 @@ public class IntegrationTestHcatalogSmoke {
 	  assertEquals("hcat wasn't able to drop table hcat_basic, return code: " + sh.ret, 0, sh.ret)
 	  
   }
+  
+  @Parameters
+  public static Map<String, Object[]> readTestCases() {
+	List<String> tests;
+	if (test_include != null) {
+	  tests = scripts.getScripts().intersect(Arrays.asList(test_include.split(",")));
+	} else if (test_exclude != null) {
+	  tests = scripts.getScripts() - Arrays.asList(test_exclude.split(","));
+	} else {
+	  tests = scripts.getScripts();
+	}
+	Map res = [:];
+	tests.each {
+	  res[it] = ([it] as String[]);
+	};
+	return res;
+  }
+
   
 }
