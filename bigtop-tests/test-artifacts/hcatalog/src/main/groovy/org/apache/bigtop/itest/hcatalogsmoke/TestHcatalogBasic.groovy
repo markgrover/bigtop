@@ -71,14 +71,14 @@ public class TestHcatalogBasic {
 	  
 	  sh.exec("""
       hive -e "DESCRIBE hcat_basic" > hive_hcat_basic_verify.actual
-      diff -u hcat_basic_verify.expected hive_hcat_basic_verify.actual
+      diff -u hcat_basic_describe.expected hive_hcat_basic_verify.actual
       """)
 	  assertEquals("hive couldn't detect the table created via hcat, return code: " + sh.ret,
 		  0, sh.ret);
 
 	  sh.exec("""
       hcat -e "DESCRIBE hcat_basic" > hcat_hcat_basic_verify.actual
-      diff -u hcat_basic_verify.expected hcat_hcat_basic_verify.actual
+      diff -u hcat_basic_describe.expected hcat_hcat_basic_verify.actual
       """)
 	  assertEquals("hcat couldn't detect the table created via hcat, return code: " + sh.ret,
 		  0, sh.ret);
