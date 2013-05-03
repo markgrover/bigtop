@@ -102,8 +102,8 @@ public class TestHcatalogBasic {
 	  
 	  // Load data into various partitions of the table
 	  sh.exec("""
-      hcat -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-01.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-01')"
-      hcat -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-02.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-02')"
+      hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-01.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-01')"
+      hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-02.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-02')"
       """)
 	  assertEquals("Error in loading data in table, return code: " + sh.ret, 0, sh.ret)
 	  
