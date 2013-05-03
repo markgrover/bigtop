@@ -41,7 +41,7 @@ import org.apache.bigtop.itest.shell.Shell
 @RunWith(OrderedParameterized.class)
 public class TestHcatalogBasic {
 
-  public static Shell sh = new Shell("/bin/bash -s")
+  public static Shell sh = new Shell("/bin/bash -sx")
   
   public TestHcatalogBasic() {
 	}
@@ -70,14 +70,14 @@ public class TestHcatalogBasic {
 	  assertTrue("Could not create table via hcat, return code: " + sh.ret, sh.ret == 0)
 	  
 	  sh.exec("""
-      hive -e "DESCRIBE TABLE hcat_basic" > hive_hcat_basic_verify.actual
+      hive -e "DESCRIBE hcat_basic" > hive_hcat_basic_verify.actual
       diff -u hcat_basic_verify.expected hive_hcat_basic_verify.actual
       """)
 	  assertEquals("hive couldn't detect the table created via hcat, return code: " + sh.ret,
 		  0, sh.ret);
 
 	  sh.exec("""
-      hcat -e "DESCRIBE TABLE hcat_basic" > hcat_hcat_basic_verify.actual
+      hcat -e "DESCRIBE hcat_basic" > hcat_hcat_basic_verify.actual
       diff -u hcat_basic_verify.expected hcat_hcat_basic_verify.actual
       """)
 	  assertEquals("hcat couldn't detect the table created via hcat, return code: " + sh.ret,
