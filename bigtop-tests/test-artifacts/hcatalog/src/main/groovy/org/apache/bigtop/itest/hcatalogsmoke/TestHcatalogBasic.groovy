@@ -65,21 +65,22 @@ public class TestHcatalogBasic {
   @Test
   public void testBasic() {
     sh.exec("""hcat -e "CREATE TABLE hcat_basic(key string, value string) \
-                 PARTITIONED BY (dt STRING) \
-                 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','" """)
+    PARTITIONED BY (dt STRING) \
+    ROW FORMAT DELIMITED FIELDS TERMINATED BY ','"
+    """)
     assertTrue("Could not create table via hcat, return code: " + sh.ret, sh.ret == 0)
 
     sh.exec("""
-      hive -e "DESCRIBE hcat_basic" > hive_hcat_basic_verify.actual
-      diff -u hcat_basic_describe.expected hive_hcat_basic_verify.actual
-      """)
+    hive -e "DESCRIBE hcat_basic" > hive_hcat_basic_verify.actual
+    diff -u hcat_basic_describe.expected hive_hcat_basic_verify.actual
+    """)
     assertEquals("hive couldn't detect the table created via hcat, return code: " + sh.ret,
         0, sh.ret);
 
     sh.exec("""
-      hcat -e "DESCRIBE hcat_basic" > hcat_hcat_basic_verify.actual
-      diff -u hcat_basic_describe.expected hcat_hcat_basic_verify.actual
-      """)
+    hcat -e "DESCRIBE hcat_basic" > hcat_hcat_basic_verify.actual
+    diff -u hcat_basic_describe.expected hcat_hcat_basic_verify.actual
+    """)
     assertEquals("hcat couldn't detect the table created via hcat, return code: " + sh.ret,
         0, sh.ret);
 
@@ -89,47 +90,47 @@ public class TestHcatalogBasic {
     sh.exec("hcat -e \"ALTER TABLE hcat_basic ADD PARTITION (dt='2013-01-02')\"")
 
     sh.exec("""
-      hive -e "SHOW PARTITIONS hcat_basic" > hive_hcat_basic_partitions.actual
-      diff -u hcat_basic_partitions.expected hive_hcat_basic_partitions.actual
-      """)
+    hive -e "SHOW PARTITIONS hcat_basic" > hive_hcat_basic_partitions.actual
+    diff -u hcat_basic_partitions.expected hive_hcat_basic_partitions.actual
+    """)
     assertEquals("hive couldn't detect all the partitions of the table, return code: " + sh.ret, 0, sh.ret)
 
     sh.exec("""
-      hcat -e "SHOW PARTITIONS hcat_basic" > hcat_hcat_basic_partitions.actual
-      diff -u hcat_basic_partitions.expected hcat_hcat_basic_partitions.actual
-      """)
+    hcat -e "SHOW PARTITIONS hcat_basic" > hcat_hcat_basic_partitions.actual
+    diff -u hcat_basic_partitions.expected hcat_hcat_basic_partitions.actual
+    """)
     assertEquals("hcat couldn't detect all the partitions of the table, return code: " + sh.ret, 0, sh.ret)
 
     // Load data into various partitions of the table
     sh.exec("""
-      hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-01.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-01')"
-      hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-02.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-02')"
-      """)
+    hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-01.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-01')"
+    hive -e "LOAD DATA LOCAL INPATH 'data/data-2013-01-02.txt' OVERWRITE INTO TABLE hcat_basic PARTITION(dt='2013-01-02')"
+    """)
     assertEquals("Error in loading data in table, return code: " + sh.ret, 0, sh.ret)
 
     // Count the number of records via hive
     sh.exec("""
-      hive -e "SELECT COUNT(*) FROM hcat_basic" > hive_hcat_basic_count.actual
-      diff -u hcat_basic_count.expected hive_hcat_basic_count.actual
-      """)
+    hive -e "SELECT COUNT(*) FROM hcat_basic" > hive_hcat_basic_count.actual
+    diff -u hcat_basic_count.expected hive_hcat_basic_count.actual
+    """)
     assertEquals("hive's count of records doesn't match expected count, return code: " + sh.ret, 0, sh.ret)
 
     // Test Pig's integration with HCatalog
     sh.exec("""
-      pig -useHCatalog -e "\
-      REGISTER /usr/lib/hcatalog/share/hcatalog/*.jar; \
-      REGISTER /usr/lib/hive/lib/*.jar; \
-      DATA= LOAD 'hcat_basic' USING org.apache.hcatalog.pig.HCatLoader(); \
-      DATA_GROUPS= GROUP DATA ALL; \
-      DATA_COUNT= FOREACH DATA_GROUPS GENERATE COUNT(DATA); \
-      DUMP DATA_COUNT;" > pig_hcat_basic_count.actual
-      diff hcat_basic_count.expected <(cat pig_hcat_basic_count.actual | sed -e 's/(//g' -e 's/)//g')
-      """)
+    pig -useHCatalog -e "\
+    REGISTER /usr/lib/hcatalog/share/hcatalog/*.jar; \
+    REGISTER /usr/lib/hive/lib/*.jar; \
+    DATA= LOAD 'hcat_basic' USING org.apache.hcatalog.pig.HCatLoader(); \
+    DATA_GROUPS= GROUP DATA ALL; \
+    DATA_COUNT= FOREACH DATA_GROUPS GENERATE COUNT(DATA); \
+    DUMP DATA_COUNT;" > pig_hcat_basic_count.actual
+    diff hcat_basic_count.expected <(cat pig_hcat_basic_count.actual | sed -e 's/(//g' -e 's/)//g')
+    """)
     assertEquals("pig's count of records doesn't match expected count, return code: " + sh.ret, 0, sh.ret)
 
     sh.exec("""
-      hcat -e "DROP TABLE hcat_basic"
-      """)
+    hcat -e "DROP TABLE hcat_basic"
+    """)
     assertEquals("hcat wasn't able to drop table hcat_basic, return code: " + sh.ret, 0, sh.ret)
 
   }
