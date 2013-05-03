@@ -64,7 +64,8 @@ public class TestHcatalogBasic {
    */
   @Test
   public void testBasic() {
-    sh.exec("""hcat -e "CREATE TABLE hcat_basic(key string, value string) \
+    sh.exec("""
+    hcat -e "CREATE TABLE hcat_basic(key string, value string) \
     PARTITIONED BY (dt STRING) \
     ROW FORMAT DELIMITED FIELDS TERMINATED BY ','"
     """)
